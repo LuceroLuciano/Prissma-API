@@ -16,6 +16,6 @@ model Explorer {
   username String @db.VarChar(255)
   mission String @db.VarChar(255)
   azureCertification Boolean @default(false)
-  dateCreated DataTime @default(now())
-  lastUpdate DataTime @updateAt
+  dateCreated DateTime @default(now())
+  lastUpdate DateTime @updateAt
 }
