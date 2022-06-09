@@ -23,6 +23,16 @@ app.get('/explorers/:id', async (req, res) => {
     res.json(explorer);
 });
 
+app.post('/explorers', async (req, res) => {
+    const explorer = {
+      name: req.body.name,
+      username: req.body.username,
+      mission: req.body.mission
+     };
+    const message = 'Explorer creado.';
+    await prisma.explorer.create({data: explorer});
+    return res.json({message});
+  });
 
 
 
