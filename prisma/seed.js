@@ -63,6 +63,9 @@ const prisma = new PrismaClient();
         },
     });
 
+
+    // Agregar nuevos registros para la tabla MissionCommander
+
     console.log('Create 5 explorers');
   } catch(e) {
     console.error(e);
