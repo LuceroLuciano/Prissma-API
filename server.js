@@ -70,6 +70,18 @@ app.get('/missioncommander/:id', async (req, res) => {
   res.json(missionComander)
 })
 
+// Enpoint POST to create new register
+app.post('/missioncommander', async (req, res) => {
+  const missionComander = {
+      name: req.body.name,
+      lang: req.body.lang,
+      missionCommander: req.body.missionCommander,
+      enrollments: req.body.enrollments
+  };
+  const message = 'Mission Commander creado';
+  await prisma.missionCommander.create({data: missionComander});
+  return res.json({message})
+})
 
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
