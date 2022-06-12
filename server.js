@@ -63,6 +63,12 @@ app.get('/missioncommander', async (req, res) => {
   res.json(allMissionComanders)
 })
 
+// Endpoint GET for return registers by ID
+app.get('/missioncommander/:id', async (req, res) => {
+  const id = req.params.id;
+  const missionComander = await prisma.missionCommander.findUnique({where: {id: parseInt(id)}});
+  res.json(missionComander)
+})
 
 
 app.listen(port, () => {
