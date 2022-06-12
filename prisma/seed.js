@@ -65,8 +65,41 @@ const prisma = new PrismaClient();
 
 
     // Agregar nuevos registros para la tabla MissionCommander
+    const missionComander = await prisma.missionCommander.upsert({
+        where: { name: 'Carlo' },
+        update: {},
+        create: {
+          name: 'Carlo',
+                  lang: 'NodeJS',
+                  missionCommander: 'Carlo',
+                  enrollments: 400
+        },
+    });
+    
+    const missionComander1 = await prisma.missionCommander.upsert({
+        where: { name: 'Fer' },
+        update: {},
+        create: {
+            name: 'Fer',
+                  lang: 'Java',
+                  missionCommander: 'Fer',
+                  enrollments: 700
+        },
+    });
+
+    const missionComander2 = await prisma.missionCommander.upsert({
+        where: { name: 'Romarpla' },
+        update: {},
+        create: {
+            name: 'Romarpla',
+                lang: 'JS',
+                missionCommander: 'Romarpla',
+                enrollments: 1100
+        },
+    });
 
     console.log('Create 5 explorers');
+    console.log('create 3 Missions Commanders')
   } catch(e) {
     console.error(e);
     process.exit(1);
