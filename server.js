@@ -55,6 +55,15 @@ app.delete('/explorers/:id', async (req, res) => {
 	return res.json({message: "Eliminado correctamente"});
 });
 
+// CRUD for the new table MissionCommander
+
+// Enpoint GET for return all registers
+app.get('/missioncommander', async (req, res) => {
+  const allMissionComanders = await prisma.missionCommander.findMany({});
+  res.json(allMissionComanders)
+})
+
+
 
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
