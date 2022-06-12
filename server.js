@@ -55,22 +55,20 @@ app.delete('/explorers/:id', async (req, res) => {
 	return res.json({message: "Eliminado correctamente"});
 });
 
-// CRUD for the new table MissionCommander
 
-// Enpoint GET for return all registers
+/******** CRUD for the new table MissionCommander *********/
+
 app.get('/missioncommander', async (req, res) => {
   const allMissionComanders = await prisma.missionCommander.findMany({});
   res.json(allMissionComanders)
 })
 
-// Endpoint GET for return registers by ID
 app.get('/missioncommander/:id', async (req, res) => {
   const id = req.params.id;
   const missionComander = await prisma.missionCommander.findUnique({where: {id: parseInt(id)}});
   res.json(missionComander)
 })
 
-// Enpoint POST to create new register
 app.post('/missioncommander', async (req, res) => {
   const missionComander = {
       name: req.body.name,
@@ -96,7 +94,6 @@ app.put('/missioncommander/:id', async(req, res) => {
   return res.json({message: "Actualizado correctamente"});
 })
 
-// Endpoint DELETE para eliminar registros
 app.delete('/missioncommander/:id', async(req, res) => {
   const id = parseInt(req.params.id);
   await prisma.missionCommander.delete({where: {id:id}});
