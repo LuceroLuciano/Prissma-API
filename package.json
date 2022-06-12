@@ -9,6 +9,7 @@
   "author": "Lu",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.17.0",
     "express": "^4.18.1",
     "prisma": "^3.15.0"
   },
