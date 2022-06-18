@@ -153,6 +153,7 @@ app.put('/newmissioncommander/:id', async(req, res) => {
   return res.json({message: "Actualizado correctamente"});
 })
 
+// Enpoint DELETE
 
 
 app.listen(port, () => {
