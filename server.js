@@ -125,6 +125,17 @@ app.get('/newmissioncommander/:id', async (req, res) => {
   res.json(newMissionCommander)
 });
 
+// Endpoint POST
+app.post('/newmissioncommander', async (req, res) => {
+  const newMissionComander = {
+      name: req.body.name,
+      username: req.body.username,
+      mainStack: req.body.mainStack
+  };
+  const message = 'Mission Commander creado';
+  await prisma.newMissionCommander.create({data: newMissionComander});
+  return res.json({message})
+})
 
 
 
