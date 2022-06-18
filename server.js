@@ -137,6 +137,22 @@ app.post('/newmissioncommander', async (req, res) => {
   return res.json({message})
 })
 
+// Enpoint PUT
+app.put('/newmissioncommander/:id', async(req, res) => {
+  const id = parseInt(req.params.id);
+  await prisma.newMissionCommander.update({
+    where: {
+      id: id
+    },
+    data: {
+      name: req.body.name,
+      username: req.body.username,
+      mainStack: req.body.mainStack
+    }
+  })
+  return res.json({message: "Actualizado correctamente"});
+})
+
 
 
 app.listen(port, () => {
