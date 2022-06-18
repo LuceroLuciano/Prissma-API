@@ -111,6 +111,17 @@ app.delete('/missioncommander/:id', async(req, res) => {
 })
 
 
+/******** CRUD for the new table NewMissionCommander *********/
+
+// endpoint GET
+app.get('/newmissioncommander', async (req, res) => {
+  const allNewMissionComanders = await prisma.newMissionCommander.findMany({});
+  res.json(allNewMissionComanders)
+})
+
+
+
+
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
