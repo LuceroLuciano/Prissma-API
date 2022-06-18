@@ -98,8 +98,44 @@ const prisma = new PrismaClient();
         },
     });
 
+    // Agregando registros a la tabla NewMissionCommander
+    const newMissionCommander = await prisma.newMissionCommander.upsert({
+      where: { name: 'Fernanda Ochoa' },
+      update: {},
+      create: {
+          name: 'Fernanda Ochoa',
+              username: 'MC Fer',
+              mainStack: 'Java',
+              hasAzureCertification: true
+      },
+    });
+
+    const newMissionCommander1 = await prisma.newMissionCommander.upsert({
+      where: { name: 'Rodrigo Martinez' },
+      update: {},
+      create: {
+          name: 'Rodrigo Martinez',
+              username: 'MC Romarpla',
+              mainStack: 'JS',
+              hasAzureCertification: true
+      },
+    });
+
+    const newMissionCommander2 = await prisma.newMissionCommander.upsert({
+      where: { name: 'Carlo Gilmar' },
+      update: {},
+      create: {
+          name: 'Carlo Gilmar',
+              username: 'MC Woopa',
+              mainStack: 'NodeJS',
+              hasAzureCertification: true
+      },
+    });
+
+    
     console.log('Create 5 explorers');
     console.log('create 3 Missions Commanders')
+    console.log('Create 3 News Missions Commanders')
   } catch(e) {
     console.error(e);
     process.exit(1);
