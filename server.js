@@ -117,7 +117,13 @@ app.delete('/missioncommander/:id', async(req, res) => {
 app.get('/newmissioncommander', async (req, res) => {
   const allNewMissionComanders = await prisma.newMissionCommander.findMany({});
   res.json(allNewMissionComanders)
-})
+});
+
+app.get('/newmissioncommander/:id', async (req, res) => {
+  const id = req.params.id;
+  const newMissionCommander = await prisma.newMissionCommander.findUnique({where: {id: parseInt(id)}});
+  res.json(newMissionCommander)
+});
 
 
 
