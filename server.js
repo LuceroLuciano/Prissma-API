@@ -154,7 +154,11 @@ app.put('/newmissioncommander/:id', async(req, res) => {
 })
 
 // Enpoint DELETE
-
+app.delete('/newmissioncommander/:id', async(req, res) => {
+  const id = parseInt(req.params.id);
+  await prisma.newMissionCommander.delete({where: {id:id}});
+  return res.json({message: "Eliminado correctamente"})
+})
 
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
