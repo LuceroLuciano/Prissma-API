@@ -66,9 +66,9 @@ API con Prissma + Express y Base de Datos con PostgreSQL
  3. Ejecuta el sigueinte comando `npx prisma migrate dev --name init` para insertar algunos registros en la base de datos. Al terminar se habra creado una tabla con registros usando **prisma**. Revisa en tu base de datos que la tabla y lo registros se realizarón correctamente.
      - Ingresa a la terminal de postgres `sudo -u postgres psql`
      - Lista las bases de datos `\c`
-     - Inicia la base de datos **explorers_API** con el siguiente comando `\c explorers`
+     - Inicia la base de datos **explorers_API** con el siguiente comando `\c explorers_api`
      - Lista las tablas `\dt`
-     - Muestra los registros de la tabla **NewMissionCommander**`select * from public."NewMissionCommander";
+     - Muestra los registros de la tabla **NewMissionCommander** `select * from public."NewMissionCommander";`
      - Presiona `q` o `\q`  para salir de la consola.
  
  Con esto comprobamos que la conexión se realizo satisfactoriamente y el servidor esta funcionando. 
