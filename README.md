@@ -32,7 +32,7 @@ API con Prissma + Express y Base de Datos con PostgreSQL
   - `npm  v8.5.0`
   - `vue @vue/cli 5.0.4`
 
-## 2. Crea una Base de datos en el gestor **PostgreSQL**
+## 2. Creando una Base de datos en el gestor **PostgreSQL**
 1. Instala postgreSQL en tu entorno local.
    - [Link de descarga de postgreSQL](https://www.postgresql.org/download/)
 2. Accede a la línea de comandos sin cambiar de cuenta. *(Si deseas crear un nuevo usuario o un nuevo rol revisa el siguiente link: [Utilizar roles y Bases de Datos de Postgres](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04-es))* 
@@ -45,7 +45,31 @@ API con Prissma + Express y Base de Datos con PostgreSQL
   - Crea una base de datos llamada **explorers_api** con el siguiente comando `create database explorers_api;`
   - Ejecuta el siguiente comando `\q` para salir de la linea de comandos de postgres
 
+3. Cambiar el nombre de **Usuario**, **Contraseña** y **Base de datos** en el archivo `.env` del proyecto **Pissma-API**, que es la cedena de conexión que permitira conectarse a la base de datos. Si seguiste las istrucciones para la instalación de postgres y creación de base de datos, es probable que solo tengas que cambiar la contraseña.
 
+## 3. Instalando dependencias del proyecto
+1. Abre el proyecto que clonaste **Prissma-API** en tu entorno local
+2. Instala las siguientes dependencias
+    ```
+    npm install express --save-dev
+    npm install prisma --save-dev
+    ```
+ 3. Ejecuta el sigueinte comando `npx prisma migrate dev --name init` para insertar algunos registros en la base de datos. Al terminar se habra creado una tabla con registros usando **prisma**. Revisa en tu base de datos que la tabla y lo registros se realizarón correctamente.
+     - Ingresa a la terminal de postgres `sudo -u postgres psql`
+     - Lista las bases de datos `\c`
+     - Inicia la base de datos **explorers_API** con el siguiente comando `\c explorers`
+     - Lista las tablas `\dt`
+     - Muestra los registros de la tabla **NewMissionCommander**`select * from public."NewMissionCommander";
+     - Presiona `q` o `\q`  para salir de la consola.
+ 
+ Con esto comprobamos que la conexión se realizo satisfactoriamente y el servidor esta funcionando. 
+     
+4. Ejecuta el servidor con el siguiente comando `node server.js`. Deberas tener la siguiente salida en la consola: `Listening to requests on port 3000
+` 
+
+
+
+ 
            
         
         
