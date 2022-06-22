@@ -83,7 +83,13 @@ API con Prissma + Express y Base de Datos con PostgreSQL
 2. Ejecuta el siguiente comando
 ```npm install```
 
-3. Ejecuta la app con el comando: `npm run serve`, con esto podrás entrar a la url: `http://localhost:8081/` en tu navegador. 
+3. Ejecuta la app con el comando: `npm run serve` <br>
+![IMG-Cliente](https://raw.githubusercontent.com/LuceroLuciano/Prissma-API/main/img/3_postgresCliente.png) <br>
+
+4. con esto podrás entrar a la url: `http://localhost:8081/` en tu navegador. 
+
+![IMG-API](https://raw.githubusercontent.com/LuceroLuciano/Prissma-API/main/img/4_API.png) <br>
+![IMG-API](https://github.com/LuceroLuciano/Prissma-API/blob/main/img/5_API.png)
 
 De esta forma estarias ejcutando la API desde el Cliente y el Servidor. 
 
