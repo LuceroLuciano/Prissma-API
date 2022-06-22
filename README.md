@@ -47,13 +47,22 @@ API con Prissma + Express y Base de Datos con PostgreSQL
 
 3. Cambiar el nombre de **Usuario**, **Contraseña** y **Base de datos** en el archivo `.env` del proyecto **Pissma-API**, que es la cedena de conexión que permitira conectarse a la base de datos. Si seguiste las istrucciones para la instalación de postgres y creación de base de datos, es probable que solo tengas que cambiar la contraseña.
 
-## 3. Instalando dependencias del proyecto
+## 3. Instalando dependencias del proyecto (Servidor)
 1. Abre el proyecto que clonaste **Prissma-API** en tu entorno local
-2. Instala las siguientes dependencias
+2. Ejecutar el siguiente comando `npm install` para instalar todas las dependencias.   
     ```
+    express
+    prisma
+    cors    
+    ```
+    Puedes instalarlo de la siguiente manera:
+    ```    
     npm install express --save-dev
     npm install prisma --save-dev
-    ```
+    npm install cors --save`
+    ```  
+     
+    
  3. Ejecuta el sigueinte comando `npx prisma migrate dev --name init` para insertar algunos registros en la base de datos. Al terminar se habra creado una tabla con registros usando **prisma**. Revisa en tu base de datos que la tabla y lo registros se realizarón correctamente.
      - Ingresa a la terminal de postgres `sudo -u postgres psql`
      - Lista las bases de datos `\c`
@@ -64,9 +73,19 @@ API con Prissma + Express y Base de Datos con PostgreSQL
  
  Con esto comprobamos que la conexión se realizo satisfactoriamente y el servidor esta funcionando. 
      
-4. Ejecuta el servidor con el siguiente comando `node server.js`. Deberas tener la siguiente salida en la consola: `Listening to requests on port 3000
-` 
+4. Ejecuta el servidor con el siguiente comando `node server.js`. Deberas tener la siguiente salida en la consola: 
+![Postgres Server](https://raw.githubusercontent.com/LuceroLuciano/Prissma-API/main/img/2_postgres.png)
 
+
+## 4. Intalando dependencias del proyecto (Cliente)
+
+1. Abre el proyecto que clonaste **client-launchx**
+2. Ejecuta el siguiente comando
+```npm install``
+
+3. Ejecuta la app con el comando: `npm run serve`, con esto podrás entrar a la url: `http://localhost:8081/` en tu navegador. 
+
+De esta forma estarias ejcutando la API desde el Cliente y el Servidor. 
 
 
  
