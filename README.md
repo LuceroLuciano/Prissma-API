@@ -81,7 +81,7 @@ API con Prissma + Express y Base de Datos con PostgreSQL
 
 1. Abre el proyecto que clonaste **client-launchx**
 2. Ejecuta el siguiente comando
-```npm install``
+```npm install```
 
 3. Ejecuta la app con el comando: `npm run serve`, con esto podrás entrar a la url: `http://localhost:8081/` en tu navegador. 
 
